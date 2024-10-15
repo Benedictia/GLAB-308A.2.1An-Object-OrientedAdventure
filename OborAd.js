@@ -276,7 +276,7 @@ class AdventurerFactory {
 }
 
 const healers = new AdventurerFactory("Healer");
-const robin = healers.generate("Robin");
+const robin1 = healers.generate("Robin");
 
 //Part 6: Developing Skills
 //Create an additional method, duel(), for the Adventurer class with some given functionalities:
