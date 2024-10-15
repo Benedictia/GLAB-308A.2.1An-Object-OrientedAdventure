@@ -253,5 +253,30 @@ class Characters {
   console.log(Characters1.health);
   console.log(Characters1.inventory);
   console.log(Characters1.roles);
+
+//Part 5: Gather your Party
+//Factories are classes that generate objects according to the factory’s instance properties.
   
-  
+  As an example, let’s look at how we might create many “healer” role adventurers using a factory:
+class AdventurerFactory {  
+  constructor (role) {
+    this.role = role;
+    this.adventurers = [];
+  }
+  generate (name) {
+    const newAdventurer = new Adventurer(name, this.role);
+    this.adventurers.push(newAdventurer);
+  }
+  findByIndex (index) {
+    return this.adventurers[index];
+  }
+  findByName (name) {
+    return this.adventurers.find((a) => a.name === name);
+  }
+}
+
+const healers = new AdventurerFactory("Healer");
+const robin = healers.generate("Robin");
+
+//Part 6: Developing Skills
+//Create an additional method, duel(), for the Adventurer class with some given functionalities:
